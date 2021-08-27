@@ -1,0 +1,100 @@
+@import "/src/app/golab-variables.scss";
+.main {
+  display: flex;
+}
+
+.navigation {
+  position: relative;
+
+  width: 200px;
+  height: 100vh;
+  background-color: $grey;
+  border-right: 1px solid $greyDarker;
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+    margin: 20px 15px;
+  }
+}
+
+.bunch {
+  margin-bottom: 30px;
+
+  &-title {
+    margin: 0 20px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.list {
+  margin: 20px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 30px;
+  padding: 0 20px;
+
+  cursor: pointer;
+
+  &-name {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: thin;
+  }
+}
+
+.service {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border-top: 1px solid $greyDarker;
+
+  &-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-color: $blue;
+    border-radius: 3px;
+  }
+
+  &-name {
+    margin-left: 10px;
+  }
+}
+
+.item--active {
+  position: relative;
+  background-color: white;
+
+  &::before {
+    content: " ";
+    width: 5px;
+    height: 20px;
+    border-radius: 25%;
+    background-color: $blue;
+
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+}
+
+.router {
+  width: 100%;
+}

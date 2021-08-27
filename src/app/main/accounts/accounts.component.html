@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="header">
+    <div class="header-backward" routerLink="../">
+      <img src="./../../../assets/icons/long-arrow-left.svg" alt="backward" />
+    </div>
+    <ul class="buttons-list">
+      <li class="item" routerLink="/main/contacts/create">
+        <span class="item-icon"
+          ><img src="./../../../assets/icons/add.svg" alt="add"
+        /></span>
+        <span class="item-name">new</span>
+      </li>
+      <li class="item" (click)="loadTable()">
+        <span class="item-icon"
+          ><img src="./../../../assets/icons/refresh.svg" alt="refresh"
+        /></span>
+        <span class="item-name">refresh</span>
+      </li>
+    </ul>
+  </div>
+  <main class="main">
+    <div class="main-header">
+      <h2 class="main-title">all accounts</h2>
+      <div class="search">
+        <form>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="search for views"
+          />
+        </form>
+        <div class="search-icon">
+          <img src="./../../../assets/icons/search.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <ul class="table-list">
+        <li
+          class="table-item"
+          *ngFor="let item of (table | async)?.currentTable"
+        >
+          <ul class="model">
+            <li class="model-name" [routerLink]="['/accounts', item.id]">
+              <a>{{ item.name }}</a>
+            </li>
+            <li class="model-phone">{{ item.phone }}</li>
+            <li class="model-address">{{ item.address.city }}</li>
+            <li class="model-email">{{ item.email }}</li>
+            <li class="model-website">{{ item.website }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="sorting">
+      <ul class="alphabetical-order">
+        <li class="alphabets--active">All</li>
+        <li class="alphabets" *ngFor="let alphabet of alphabets">
+          {{ alphabet | uppercase }}
+        </li>
+      </ul>
+    </div>
+    <div class="info">
+      <div class="info-record">1 - 50 of 97 (0 selected)</div>
+      <div class="page">
+        <div class="page-icon">
+          <img
+            src="./../../../assets/icons/long-arrow-left.svg"
+            alt="backward"
+          />
+        </div>
+        <div class="page-name">Page</div>
+        <div class="page-icon">
+          <img
+            src="./../../../assets/icons/long-arrow-right.svg"
+            alt="forward"
+          />
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

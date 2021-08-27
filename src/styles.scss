@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/golab-variables.scss";
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #3c403f;
+  font-family: "Segoe UI Regular", "SegoeUI", "Segoe UI";
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+// svg img
+img {
+  width: 14px;
+  height: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+}
