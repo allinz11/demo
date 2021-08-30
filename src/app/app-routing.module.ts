@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LogComponent } from './log/log.component';
-import { AccountsComponent } from './main/accounts/accounts.component';
 import { FormComponent } from './main/form/form.component';
 import { MainComponent } from './main/main.component';
+import { TablesComponent } from './main/tables/tables.component';
 
 const routes: Routes = [
   {
@@ -17,11 +17,30 @@ const routes: Routes = [
     children: [
       {
         path: 'accounts',
-        component: AccountsComponent,
+        component: TablesComponent,
+      },
+
+      {
+        path: 'accounts/create',
+        component: FormComponent,
       },
 
       {
         path: 'accounts/:id',
+        component: FormComponent,
+      },
+      {
+        path: 'contacts',
+        component: TablesComponent,
+      },
+
+      {
+        path: 'contacts/create',
+        component: FormComponent,
+      },
+
+      {
+        path: 'contacts/:id',
         component: FormComponent,
       },
     ],

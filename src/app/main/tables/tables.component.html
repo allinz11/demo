@@ -4,7 +4,7 @@
       <img src="./../../../assets/icons/long-arrow-left.svg" alt="backward" />
     </div>
     <ul class="buttons-list">
-      <li class="item" routerLink="/main/contacts/create">
+      <li class="item" [routerLink]="componentRouter + '/create'">
         <span class="item-icon"
           ><img src="./../../../assets/icons/add.svg" alt="add"
         /></span>
@@ -20,14 +20,14 @@
   </div>
   <main class="main">
     <div class="main-header">
-      <h2 class="main-title">all accounts</h2>
+      <h2 class="main-title">All {{ componentRouter.slice(1) }}</h2>
       <div class="search">
         <form>
           <input
             type="text"
             name="search"
             id="search"
-            placeholder="search for views"
+            placeholder="Search this view"
           />
         </form>
         <div class="search-icon">
@@ -42,7 +42,7 @@
           *ngFor="let item of (table | async)?.currentTable"
         >
           <ul class="model">
-            <li class="model-name" [routerLink]="['/accounts', item.id]">
+            <li class="model-name" [routerLink]="[componentRouter, item.id]">
               <a>{{ item.name }}</a>
             </li>
             <li class="model-phone">{{ item.phone }}</li>

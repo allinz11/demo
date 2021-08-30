@@ -5,6 +5,7 @@ export const ERROR_MESSAGE = 'ERROR_MESSAGE';
 export const CURRENT_RECORDS = 'CURRENT_RECORDS';
 export const CURRENT_RECORD = 'CURRENT_RECORD';
 export const CURRENT_TABLE = 'CURRENT_TABLE';
+export const DELETE_USER = 'DELETE_USER';
 
 // Action:
 
@@ -21,7 +22,7 @@ export class Table implements Action {
   constructor(public payload: []) {}
 }
 
-export class CurrentRecords implements Action {
-  readonly type = CURRENT_RECORDS;
+export class DeleteUser implements Action {
+  readonly type = DELETE_USER;
   constructor(public payload: number) {}
 }

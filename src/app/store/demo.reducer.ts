@@ -1,16 +1,11 @@
 import * as appActions from './demo.actions';
-interface InitialState {
-  color: string;
-  border: number;
-  size: number;
-}
 
 export interface AppState {
   isLoading: boolean;
   errorMessage: string;
   currentRecords: object[];
   currentRecord: object;
-  currentTable: [];
+  currentTable: any[];
 }
 
 const appState: AppState = {
@@ -37,38 +32,16 @@ export function appReducer(state: AppState = appState, action: any): AppState {
         currentTable: action.payload,
       };
       break;
+    case appActions.DELETE_USER:
+      const users: any = state.currentTable.splice(action.payload, 1);
+      return {
+        ...appState,
+        currentTable: users,
+      };
+      break;
 
     default:
       return appState;
       break;
   }
 }
-
-// export function blockReducer(
-//   state: AppState = appState,
-//   action: Action
-// ): AppState {
-//   switch (action.type) {
-//     case appActions.COLOR:
-//       return {
-//         ...state,
-//         color: action.payload,
-//       };
-//       break;
-//     case appActions.BORDER:
-//       return {
-//         ...state,
-//         border: action.payload,
-//       };
-//       break;
-//     case appActions.SIZE:
-//       return {
-//         ...state,
-//         size: action.payload,
-//       };
-//       break;
-//     default:
-//       return initialState;
-//       break;
-//   }
-// }

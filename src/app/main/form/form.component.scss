@@ -1,4 +1,4 @@
-@import "./../accounts/accounts.component.scss";
+@import "./../tables/tables.component.scss";
 
 .profile {
   display: flex;
@@ -13,7 +13,7 @@
 
     width: 40px;
     height: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
     border-radius: 50%;
     background-color: $blue;
 
@@ -29,6 +29,7 @@
   &-name {
     font-size: 14px;
     font-weight: bold;
+    color: rgb(105, 105, 105);
     text-transform: capitalize;
   }
 }
@@ -49,6 +50,7 @@
 
   &-body {
     width: 500px;
+    margin-left: 10px;
     border: 1px solid $greyDarker;
     padding: 5px 10px;
   }
@@ -63,12 +65,13 @@
   &-item {
     display: flex;
     align-items: center;
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 1px solid $greyDarker;
   }
 
   &-name {
     flex: 1;
+    color: rgb(105, 105, 105);
   }
 
   &-value {
@@ -76,4 +79,8 @@
 
     font-weight: bold;
   }
+}
+
+input {
+  border: none;
 }

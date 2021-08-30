@@ -55,6 +55,7 @@
   }
 
   &-title {
+    margin-bottom: 15px;
     font-weight: bold;
     text-transform: capitalize;
   }
@@ -147,10 +148,11 @@ input {
 
   li {
     flex: 1;
+    font-size: 14px;
   }
 
   &-name {
-    flex: 2;
+    flex: 1.5 !important;
 
     cursor: pointer;
   }
